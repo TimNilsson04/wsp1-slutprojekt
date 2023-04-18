@@ -1,0 +1,35 @@
+.flash {
+    z-index: 1100;
+    position: fixed;
+    // color: var(--color-light);
+    
+    background: var(--color-grey-100);
+    border: var(--border-100);
+    top: 2vmin;
+    margin-left: 2rem;
+    max-width: 40ch;
+    // width: 100%;
+    padding: var(--step-0);
+    &__inner {
+        background-color: rgb(238, 238, 238);
+        gap: var(--step--2) var(--step--1);
+        grid-auto-rows: auto;
+    }
+    &__message {
+        grid-row: 1;
+    }
+    &__button {
+        grid-row: 2;
+        // align-self: end;
+        justify-self: end;
+        background-color: var(--color-dark) !important;
+        color: var(--color-light) !important;
+        &:hover {
+            color: var(--color-green) !important;
+        }
+    }
+}
+
+.invisible {
+    display: none;
+}
