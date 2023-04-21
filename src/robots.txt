@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://flipflops.timpan.ninja/sitemap.xml
-Sitemap: http://www.flipflops.timpan.ninja/sitemap.xml
