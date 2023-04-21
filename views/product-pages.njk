@@ -1,0 +1,61 @@
+---
+layout: base.njk
+pagination:
+    data: flipflops
+    size: 1
+    alias: product
+    addAllPagesToCollections: true
+permalink: "flipflops/{{ product.name | slug }}/"
+title: Product
+---
+
+{%set title = product.name %}
+
+<nav>
+    <nav>
+            
+    </nav>
+    <a class="home" href="/">
+        <div>
+
+            <h1> Flip Flops </h1>
+
+            <hr>
+            <p class="text"> Put Your Flip in the Flop </p>
+        </div>
+    </a>
+</nav>
+
+
+
+
+<div class="grid-container2">
+
+    <div class="separate">
+        {% set imageUrl = "./src/img/" + product.name + "/" + product.images[0].url %}
+        {% image imageUrl, product.images[0].alt %}
+
+        {% set imageUrl = "./src/img/" + product.name + "/" + product.images[1].url %}
+        {% image imageUrl, product.images[1].alt %}
+
+    </div>
+
+    <div>
+        <div class="card1">
+            <p class="price">{{ product.name }} är {{ product.price }}kr</p>
+            <div class="text1">
+                <p>Beskrivning:</p>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+
+        <a href="{{ product.url }}">
+            <div class="card">
+                <button>Original Site</button>
+            </div>
+        </a>
+
+    </div>
+
+
+</div>
