@@ -1,13 +1,5 @@
----
-layout: base.njk
-pagination:
-    data: flipflops
-    size: 1
-    alias: product
-    addAllPagesToCollections: true
-permalink: "flipflops/{{ product.name | slug }}/"
-title: Product
----
+{% extends "layout.njk" %}
+{% block  content %}
 
 {%set title = product.name %}
 
@@ -59,3 +51,5 @@ title: Product
 
 
 </div>
+
+{% endblock %}
