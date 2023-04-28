@@ -18864,8 +18864,8 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
-  column-gap: 80px;
-  row-gap: 35px;
+  column-gap: 40px;
+  row-gap: 20px;
   padding-bottom: 3rem;
   padding-top: 2rem;
   text-align: center;
@@ -18918,6 +18918,10 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
+.active {
+  background: -webkit-linear-gradient(8.5deg, #8c7ae1, #816edc, #08ca90, #08ca90);
+}
+
 .text1 {
   padding-left: 2%;
   padding-right: 2%;
@@ -18945,6 +18949,10 @@ img {
   background-color: #73d7e5;
   box-shadow: 10px 10px;
   padding: 2rem;
+  width: 75%;
+}
+img a {
+  width: 75%;
 }
 
 @media (max-width: 768px) {
