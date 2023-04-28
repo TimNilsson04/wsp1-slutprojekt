@@ -18909,6 +18909,10 @@ hr {
   color: #1CFEBA;
 }
 
+.img {
+  margin: 0%;
+}
+
 .text {
   text-align: center;
   font-size: 1.25rem;
@@ -18948,8 +18952,7 @@ nav {
 img {
   background-color: #73d7e5;
   box-shadow: 10px 10px;
-  padding: 2rem;
-  width: 75%;
+  padding: 1rem;
 }
 img a {
   width: 75%;

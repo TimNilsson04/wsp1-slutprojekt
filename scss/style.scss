@@ -37,7 +37,6 @@ body{
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    
     justify-content: center;
     column-gap: 40px;
     row-gap: 20px;
@@ -49,7 +48,6 @@ body{
   .grid-container2 {
     display: grid;
     grid-template-columns: auto auto;
-    
     justify-content: center;
     column-gap: 80px;
     row-gap: 40px;
@@ -85,6 +83,9 @@ hr{
     text-decoration: none 
 }
 
+.img{
+  margin: 0%;
+}
 
 .text{
   text-align: center;
@@ -125,8 +126,7 @@ nav{
 img{
     background-color: #73d7e5;
     box-shadow: 10px 10px;
-    padding: 2rem;
-    width: 75%;
+    padding: 1rem;
     a{
       width: 75%;
     }
