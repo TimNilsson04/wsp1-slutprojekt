@@ -21,70 +21,26 @@
       </ul>
     </header>
 
-    <div class="grid-container">
+   <div class="grid-container">
 
-      <h2>Warp</h2> <h2>SuperDry Orange</h2> <h2>SuperDry Black</h2> 
-    
-      <a href="views/warp.njk"><img class="img" src="img/Warp/Warp.webp" alt="" ></a> 
- 
-      <a href="/sneakers/court-platform"><img src="img/SuperDry Orange/SuperDry Orange.webp" alt=""></a> 
-  
-       <a href="/sneakers/waffle"><img src="img/SuperDry Black/SuperDry Black.webp" alt=""></a>
-   
-  
- 
-       <div class="center">
-       <div class="card">
-          <p class="price">79.90Kr </p>
-          <p class="text1">Flip-flops, Stl. 31-38, Remmar i PVC-fritt gummi, Sula i PE-material</p>
+        {% for product in rows %}
+        
+
+        
+            <div>
+                <h2 style="text-align:center">{{ product.name }}</h2>
+                <a href="/flipflops/{{ product.name | slug }}">
+                    {% set imageUrl = "public/img/" + product.name + "/" + product.picture %}
+                 <img src="public/img/{{ product.name }}/{{ product.picture }}"> 
+                </a>
+                
+                <div class="card">
+                    <p class="price">{{ product.price }}Kr</p>
+                    <p class="text1">{{ product.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-      </div>
- 
-        <div class="center">
-        <div class="card">
-          <p class="price">149Kr </p>
-          <p class="text1">Flip-flops, Herrstorlekar, Remmar i gummi, Sula i EVA och gummi</p>
-        </div>
-      </div>
- 
-        <div class="center">
-        <div class="card">
-          <p class="price">149Kr </p>
-          <p class="text1"> Flip-flops, Herrstorlekar, Remmar i gummi, Sula i EVA och gummi </p>
-        </div>
-      </div>
-
-
-          <h2>Roxy Brown</h2> <h2>Roxy</h2> <h2>Quicksilver</h2>
-  
-        <a href="/sneakers/court-vision"><img src="img/Roxy Brown/Roxy Brown.png" alt=""></a>  
-      
-     <a href="/sneakers/waffle-Debut"><img src="img/Roxy/Roxy.png" alt=""></a>
-
-     <a href="/sneakers/match"><img src="img/Quicksilver/Quicksilver.png" alt=""> </a> 
-
-
-     <div class="center">
-     <div class="card">
-      <p class="price">299Kr </p>
-      <p class="text1">   Flip-flops,  Damstorlekar, Remmar i syntetskinn, Innersula i EVA-material, Yttersula i gummi  </p>
-      </div>
-     </div>
-
-      <div class="center">
-     <div class="card">
-      <p class="price">129Kr </p>
-      <p class="text1">  Flip-flops, Juniorstorlekar, Remmar i TPU-material, Yttersula och fotbädd i gummi      </p>
-      </div>
-     </div>
-
-     <div class="center">
-     <div class="card">
-      <p class="price">199Kr </p>
-      <p class="text1">  Flip-flops, Herrstorlekar, Ovandel i bomullscanvas, Anatomisk fotbädd med fotvalvsstöd, Mönstrad yttersula i EVA och gummi, Innerfoder i vattentålig polyester </p>
-       </div>
-       </div>
-  </div>
     
 
 {% endblock %}
