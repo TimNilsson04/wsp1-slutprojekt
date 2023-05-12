@@ -18989,6 +18989,9 @@ a:hover, a:active, a:focus {
   background-color: rgb(234, 234, 234);
   text-align: center;
 }
+.card .container {
+  background-color: #121212 !important;
+}
 
 .card1 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
