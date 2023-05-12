@@ -11,3 +11,6 @@ Jag kommer forsätta med landing page nästa vecka och försöka bli klar med de
 ## vecka 19 tisdag
 Jag har skrivit in datan i databasen och denna data är bilder, beskrivning av produkten, priset och namnet på produkten.
 Jag har försökt koppla routern och koden i njk filen.
+
+## vecka 19 fredag
+Jag har lyckats med att skapa en kopia av min gamla flipflop hemsida med hjälp av databaser denna lektion. Den behöver lite finslipning men jag har tänkt att försöka med nästa projekt nästa vecka. Det ska vara att skapa en varukorg där man kan lägga in flipflop produkterna i.
