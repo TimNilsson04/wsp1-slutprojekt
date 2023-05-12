@@ -21,22 +21,21 @@
       </ul>
     </header>
 
-   <div class="grid-container">
+   <div class="grid-container container">
 
-        {% for product in rows %}
-        
+        {% for products in rows %}
 
-        
+
             <div>
-                <h2 style="text-align:center">{{ product.name }}</h2>
-                <a href="/flipflops/{{ product.name | slug }}">
-                    {% set imageUrl = "public/img/" + product.name + "/" + product.picture %}
-                 <img src="public/img/{{ product.name }}/{{ product.picture }}"> 
+                <h2 style="text-align:center">{{ products.name }}</h2>
+                <a href="/flipflops/{{ products.name }}">
+                    {% set imageUrl = "public/img/" + products.name + "/" + products.picture %}
+                 <img src="/img/{{ products.name }}/{{ products.picture }}"> 
                 </a>
                 
-                <div class="card">
-                    <p class="price">{{ product.price }}Kr</p>
-                    <p class="text1">{{ product.description }}</p>
+                <div class="card container">
+                    <p class="price">{{ products.price }}Kr</p>
+                    <p class="text1">{{ products.description }}</p>
                 </div>
             </div>
             {% endfor %}

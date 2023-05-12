@@ -25,13 +25,23 @@ router.get('/', async function (req, res, next) {
 });
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query(`
-    SELECT tn03forum.*, tn03users.name AS username
-    FROM tn03forum
-    JOIN tn03users ON tn03forum.authorId = tn03users.id;`);
+    const [rows] = await promisePool.query("SELECT * FROM tn03products");
     res.render('index.njk', {
         rows: rows,
         title: 'Home',
+    });
+});
+
+router.get('/flipflops/:name', async function (req, res) {
+    const [rows] = await promisePool.query(
+        "SELECT * FROM tn03products WHERE tn03products.name = ?",
+        [req.params.name]
+    );
+
+    res.render('product-pages.njk', {
+        rows: rows,
+        title: 'Product',
+        loggedin: req.session.login || false,
     });
 });
 

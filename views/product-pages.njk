@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 {% block  content %}
 
-{%set title = product.name %}
+{%set title = products.name %}
 
  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -24,36 +24,38 @@
     </header>
 
 
+  {% for products in rows %}
 
-<div class="grid-container2">
+<div class="grid-container2 container">
 
     <div class="separate">
-        {% set imageUrl = "./src/img/" + product.name + "/" + product.images[0].url %}
-        {% image imageUrl, product.images[0].alt %}
+        {% set imageUrl = "./src/img/" + products.name + "/" + products.picture %}
+        <img src="/img/{{ products.name }}/{{ products.picture }}"> 
 
-        {% set imageUrl = "./src/img/" + product.name + "/" + product.images[1].url %}
-        {% image imageUrl, product.images[1].alt %}
+
+        {% set imageUrl = "./src/img/" + products.name + "/" + products.picture2 %}
+        <img src="/img/{{ products.name }}/{{ products.picture2 }}"> 
+
 
     </div>
 
     <div>
-        <div class="card1">
-            <p class="price">{{ product.name }} är {{ product.price }}kr</p>
+        <div class="card1 container">
+            <p class="price">{{ products.name }} är {{ products.price }}kr</p>
             <div class="text1">
                 <p>Beskrivning:</p>
-                <p>{{ product.description }}</p>
+                <p>{{ products.description }}</p>
             </div>
         </div>
 
-        <a href="{{ product.url }}">
-            <div class="card">
+        <a href="{{ products.name }}">
+            <div class="card container">
                 <button>Original Site</button>
             </div>
         </a>
 
     </div>
-
-
 </div>
+  {% endfor %}
 
 {% endblock %}
