@@ -18944,6 +18944,11 @@ hr {
   text-align: center;
 }
 
+header {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 li {
   padding-right: 0.2rem;
 }
@@ -18984,7 +18989,9 @@ a {
   color: #51e1b6;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: #9D8DF1;
 }
 
@@ -18999,9 +19006,6 @@ a:hover, a:active, a:focus {
   background-color: rgb(234, 234, 234);
   text-align: center;
 }
-.card .container {
-  background-color: #121212 !important;
-}
 
 .card1 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -19015,7 +19019,15 @@ a:hover, a:active, a:focus {
   font-family: "Noto Serif Khojki", serif;
 }
 
-.card > button {
+.card2 {
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  background-color: #000;
+  text-align: center;
+}
+
+.card2 > button {
   border: none;
   outline: 0;
   padding: 12px;
@@ -19025,6 +19037,8 @@ a:hover, a:active, a:focus {
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+  align-items: center;
+  margin: 0%;
 }
 
 .card button:hover {

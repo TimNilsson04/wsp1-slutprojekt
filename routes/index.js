@@ -79,7 +79,8 @@ router.get('/profile', async function (req, res, next) {
 
     if (req.session.login == 1) {
 
-        res.render('profile.njk', { title: 'Profile', name: req.session.username })
+        res.render('profile.njk', { title: 'Profile', name: req.session.username,         loggedin: req.session.login,
+    })
     }
     else {
         return res.redirect('/denied');
@@ -118,7 +119,8 @@ router.get('/crypt/:password', async function (req, res, next) {
 router.get('/register', function (req, res, next) {
     
     if(req.session.login === undefined || req.session.login === 0){
-    res.render('register.njk', { title: 'Register' });
+    res.render('register.njk', { title: 'Register',        loggedin: req.session.login,
+});
     }
     else{
         return res.redirect('/denied');
@@ -176,7 +178,8 @@ else {
 
 router.get('/delete', async function (req, res, next) {
 
-    res.render('delete.njk', { title: 'Delete' });
+    res.render('delete.njk', { title: 'Delete',        loggedin: req.session.login,
+});
 
 });
 
@@ -186,6 +189,7 @@ router.post('/delete', async function (req, res, next) {
         const [Delet] = await promisePool.query('DELETE FROM tn03users WHERE name = ?', [username]);
         req.session.login = undefined
         res.redirect('/')
+        
     }
 });
 
