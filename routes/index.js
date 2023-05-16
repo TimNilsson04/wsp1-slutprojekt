@@ -18,19 +18,16 @@ const mysql = require('mysql2');
 
 router.get('/', async function (req, res, next) {
     const [rows] = await promisePool.query("SELECT * FROM tn03products");
+    console.log(req.session.login)
+    
     res.render('index.njk', {
         rows: rows,
         title: 'Home',
+        loggedin: req.session.login,
     });
 });
 
-router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM tn03products");
-    res.render('index.njk', {
-        rows: rows,
-        title: 'Home',
-    });
-});
+
 
 router.get('/flipflops/:name', async function (req, res) {
     const [rows] = await promisePool.query(
@@ -41,7 +38,7 @@ router.get('/flipflops/:name', async function (req, res) {
     res.render('product-pages.njk', {
         rows: rows,
         title: 'Product',
-        loggedin: req.session.login || false,
+        loggedin: req.session.login,
     });
 });
 
@@ -68,8 +65,6 @@ router.post('/login', async function (req, res, next) {
             req.session.userid = user[0].id;
             return res.redirect('/profile');
         }
-    
-
         else {
             return res.send("Invalid username or password")
         }
@@ -100,8 +95,8 @@ router.post('/profile', async function (req, res, next) {
 
 router.get('/logout', async function (req, res, next) {
 
-    res.render('logout.njk', { title: 'Logout' });
-    req.session.login = 0;
+    res.render('logout.njk', { title: 'Logged out' });
+    req.session.login = undefined;
 });
 
 router.post('/logout', async function (req, res, next) {
@@ -189,14 +184,17 @@ router.post('/delete', async function (req, res, next) {
     const { username } = req.body;
     if (req.session.login === 1) {
         const [Delet] = await promisePool.query('DELETE FROM tn03users WHERE name = ?', [username]);
-        req.session.login = 0
+        req.session.login = undefined
         res.redirect('/')
     }
 });
 
 router.get('/denied', async function (req, res, next) {
 
-    res.render('denied.njk', { title: 'Access denied' });
+    res.render('denied.njk', { 
+        title: 'Access denied',
+        loggedin: req.session.login,
+    });
 
 });
 
