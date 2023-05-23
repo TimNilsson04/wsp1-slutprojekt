@@ -18,11 +18,24 @@ const mysql = require('mysql2');
 
 router.get('/', async function (req, res, next) {
     const [rows] = await promisePool.query("SELECT * FROM tn03products");
-    console.log(req.session.login)
     
     res.render('index.njk', {
         rows: rows,
         title: 'Home',
+        loggedin: req.session.login,
+    });
+});
+
+router.get('/basket', async function (req, res, next) {
+    const [rows] = await promisePool.query(
+        "SELECT * FROM tn03products WHERE tn03products.id = ?",
+        [req.params.add]
+        
+    );
+
+    res.render('basket.njk', {
+        rows: rows,
+        title: 'Basket',
         loggedin: req.session.login,
     });
 });

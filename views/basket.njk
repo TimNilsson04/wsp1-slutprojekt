@@ -1,0 +1,14 @@
+{% extends "layout.njk" %}
+{% block content %}
+
+<main class="container mt-3">
+
+  {% include "navigation.njk" %}
+
+
+  {% set imageUrl = "./src/img/" + products.name + "/" + products.picture %}
+      <img src="/img/{{ products.name }}/{{ products.picture }}">
+
+
+</main>
+{% endblock %}
