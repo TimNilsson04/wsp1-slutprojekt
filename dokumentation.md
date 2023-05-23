@@ -14,3 +14,6 @@ Jag har försökt koppla routern och koden i njk filen.
 
 ## vecka 19 fredag
 Jag har lyckats med att skapa en kopia av min gamla flipflop hemsida med hjälp av databaser denna lektion. Den behöver lite finslipning men jag har tänkt att försöka med nästa projekt nästa vecka. Det ska vara att skapa en varukorg där man kan lägga in flipflop produkterna i.
+
+## vecka 21 tisdag
+Under denna lektion så har jag skapat en sida för varukorgen. Jag har skapat en eventlistener för en knapp som sedan sparar produktens namn, bild och pris på localstorage. Nästa lektion så ska jag försöka göra så att produkten kan visas i varukorgen men om jag inte lyckas med det så ska jag hosta hemsidan.
