@@ -59,6 +59,20 @@ body {
 
 }
 
+.cart{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-left: 1rem;
+  column-gap: 15rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  background-color: rgb(234, 234, 234);
+}
+
+.button2{
+  padding-right: 65rem;
+}
+
 .center {
   text-align: center;
   align-items: center;

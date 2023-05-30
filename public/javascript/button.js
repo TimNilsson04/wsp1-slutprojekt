@@ -23,4 +23,5 @@ window.addEventListener('load', (event) => {
         price = addButton.dataset.productprice;
         localStorage.setItem('price', price);
     });
+
 });

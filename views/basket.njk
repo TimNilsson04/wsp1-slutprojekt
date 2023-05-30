@@ -5,10 +5,19 @@
 
   {% include "navigation.njk" %}
 
+  <div class="cart">
+      <h1 id="name"></h1>
+      <h1 id="price"></h1> 
+    </div>
 
-  {% set imageUrl = "./src/img/" + products.name + "/" + products.picture %}
-      <img src="/img/{{ products.name }}/{{ products.picture }}">
+    <div class="button2">
+    <a href="">
+      <div class="card2 container">
+        <button>Buy cart</button>
+      </div>
+    </a>
+  </div>
 
-
+      <script type="module" src="/javascript/cart.js"></script>
 </main>
 {% endblock %}
